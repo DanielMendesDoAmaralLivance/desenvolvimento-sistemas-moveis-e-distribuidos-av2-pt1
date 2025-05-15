@@ -24,7 +24,7 @@ export class CreditCardService {
   ): Promise<CreditCard> {
     const creditCard = await this.prisma.creditCard.create({ data });
 
-    this.sendCreatePaymentNotification(creditCard);
+    this.sendRegisteredPaymentNotification(creditCard);
 
     return creditCard;
   }
@@ -44,8 +44,8 @@ export class CreditCardService {
     }, 5000);
   }
 
-  private sendCreatePaymentNotification(creditCard: CreditCard): void {
-    this.sendNotification('payment_created', creditCard);
+  private sendRegisteredPaymentNotification(creditCard: CreditCard): void {
+    this.sendNotification('payment_registered', creditCard);
   }
 
   private sendConfirmationPaymentNotification(creditCard: CreditCard): void {
@@ -68,4 +68,4 @@ export class CreditCardService {
   }
 }
 
-type NotificationType = 'payment_created' | 'payment_confirmed';
+type NotificationType = 'payment_registered' | 'payment_confirmed';

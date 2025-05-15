@@ -10,8 +10,7 @@ export class CreditCardController {
   async send(@Body() body: Prisma.CreditCardCreateInput): Promise<CreditCard> {
     try {
       return await this.creditCardService.create(body);
-    }
-    catch(e) {
+    } catch (e) {
       console.error(e);
     }
   }
