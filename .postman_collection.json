@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "ede18f04-1008-4cb3-9050-5e5bc1f8f5d4",
+		"name": "Compre Fácil",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12552648"
+	},
+	"item": [
+		{
+			"name": "CreditCard",
+			"item": [
+				{
+					"name": "Send",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUser\": \"2290\",\r\n    \"orderNumber\": 1,\r\n    \"orderValue\": 100.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/credit-card/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"credit-card",
+								"send"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mail",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/mail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"mail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
